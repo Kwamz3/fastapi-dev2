@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from database import session, engine
 import database_models
 
+
 app = FastAPI()
 
 app.add_middleware(
@@ -99,3 +100,4 @@ def delete_product(id: int, db: Session = Depends(get_db)):
     db.delete(db_product) 
     db.commit()
     return {"message": "Product deleted successfully!"}
+
